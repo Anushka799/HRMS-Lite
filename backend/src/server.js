@@ -287,8 +287,16 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB then start server
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`HRMS Lite API running on port ${PORT}`);
+connectDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`HRMS Lite API running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Failed to connect to MongoDB:', err);
+    // Start server anyway to show error message
+    app.listen(PORT, () => {
+      console.log(`HRMS Lite API running on port ${PORT} (DB connection failed)`);
+    });
   });
-});
