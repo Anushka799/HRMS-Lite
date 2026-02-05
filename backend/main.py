@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Optional, List
 import os
 import re
+import certifi
 
 # MongoDB connection
 MONGODB_URI = os.getenv("MONGODB_URI", "mongodb+srv://mohduzair171222_db_user:NPYKhy8PoXAj6ql3@keybo.mdqvp2v.mongodb.net/hrms_lite?appName=Keybo")
@@ -28,7 +29,7 @@ db = None
 @app.on_event("startup")
 async def startup_db():
     global client, db
-    client = AsyncIOMotorClient(MONGODB_URI)
+    client = AsyncIOMotorClient(MONGODB_URI, tlsCAFile=certifi.where())
     db = client.hrms_lite
     print("Connected to MongoDB Atlas")
 
