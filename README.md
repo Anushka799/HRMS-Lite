@@ -17,7 +17,7 @@ HRMS Lite enables a single admin to:
 
 ## Tech Stack
 - **Frontend:** React (Vite) + JavaScript
-- **Backend:** Node.js + Express
+- **Backend:** Python + FastAPI
 - **Database:** MongoDB Atlas
 - **Deployment:** Vercel (frontend), Render (backend)
 
@@ -53,18 +53,17 @@ HRMS Lite enables a single admin to:
 
 ## Run Locally
 
-### 1) Backend
+### 1) Backend (Python)
 ```bash
 cd backend
-npm install
-npm run dev
+pip install -r requirements.txt
+python main.py
 ```
 The API starts on `http://localhost:3001`.
 
 **Environment variables** (optional):
 - `PORT` — API port (default `3001`)
 - `MONGODB_URI` — MongoDB connection string
-- `CORS_ORIGIN` — allowed frontend origin (default `*`)
 
 ### 2) Frontend
 ```bash
@@ -83,11 +82,11 @@ VITE_API_BASE=https://your-backend-url
 ```
 
 ## Deployment Notes
-- **Backend (Render/Railway):**
+- **Backend (Render):**
   - Root directory: `backend`
-  - Build command: `npm install`
-  - Start command: `npm start`
-  - Set `CORS_ORIGIN` to your frontend URL
+  - Build command: `pip install -r requirements.txt`
+  - Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+  - Set `MONGODB_URI` environment variable
 - **Frontend (Vercel/Netlify):**
   - Root directory: `frontend`
   - Build command: `npm install && npm run build`
