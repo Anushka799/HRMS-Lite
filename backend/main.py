@@ -21,6 +21,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:5174",
         "https://hrms-lite-bice.vercel.app",
+        "https://full-stack-coding-assignment-hrms-lite-3jxx.onrender.com",
         "*"
     ],
     allow_credentials=False,
