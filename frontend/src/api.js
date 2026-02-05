@@ -1,15 +1,16 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://full-stack-coding-assignment-hrms-lite-1-0q8n.onrender.com';
+const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:3001').replace(/\/$/, '');
 
 const buildUrl = (path) => `${API_BASE}${path}`;
 
 const request = async (path, options = {}) => {
+  const hasBody = options.body !== undefined;
   const response = await fetch(buildUrl(path), {
     headers: {
-      'Content-Type': 'application/json',
+      ...(hasBody ? { 'Content-Type': 'application/json' } : {}),
       ...(options.headers || {})
     },
     ...options,
-    body: options.body ? JSON.stringify(options.body) : undefined
+    body: hasBody ? JSON.stringify(options.body) : undefined
   });
 
   const isJson = response.headers.get('content-type')?.includes('application/json');
