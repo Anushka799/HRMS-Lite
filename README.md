@@ -2,34 +2,54 @@
 
 A lightweight Human Resource Management System for managing employee records and daily attendance. Built as a full-stack assignment with a clean, production-ready UI and a simple REST API.
 
+## 🔗 Live Demo
+
+- **Frontend:** https://hrms-lite-bice.vercel.app
+- **Backend API:** https://full-stack-coding-assignment-hrms-lite-1-0q8n.onrender.com
+- **GitHub:** https://github.com/uzairkhann03/Full-Stack-Coding-Assignment-HRMS-Lite
+
 ## Project Overview
 HRMS Lite enables a single admin to:
 - Add, view, and delete employees
 - Mark daily attendance (Present/Absent)
 - View attendance history per employee
-- See a small dashboard summary of employee and attendance counts
+- See a dashboard summary of employee and attendance counts
 
 ## Tech Stack
-- **Frontend:** React (Vite)
+- **Frontend:** React (Vite) + JavaScript
 - **Backend:** Node.js + Express
-- **Database:** SQLite (file-based)
-- **Deployment:** Vercel/Netlify (frontend), Render/Railway (backend)
+- **Database:** MongoDB Atlas
+- **Deployment:** Vercel (frontend), Render (backend)
 
 ## Features
-- Employee CRUD (create, list, delete)
-- Attendance tracking by date
-- Summary dashboard cards
-- Loading/empty/error UI states
-- Server-side validation and meaningful errors
+
+### Core Features
+- ✅ Employee Management (Add, View, Delete)
+- ✅ Attendance Tracking (Mark Present/Absent by date)
+- ✅ View attendance records per employee
+
+### Bonus Features
+- ✅ Dashboard summary (total employees, attendance counts)
+- ✅ Total present days displayed per employee
+- ✅ Filter attendance by date
+
+### UI/UX
+- ✅ Clean, professional layout
+- ✅ Loading states
+- ✅ Empty states
+- ✅ Error handling with meaningful messages
+- ✅ Responsive design
 
 ## API Endpoints
-- `GET /api/health` — API health check
-- `GET /api/employees` — list employees (includes attendance counts)
-- `POST /api/employees` — add an employee
-- `DELETE /api/employees/:employeeId` — delete employee
-- `GET /api/employees/:employeeId/attendance?date=YYYY-MM-DD` — list attendance (optional date filter)
-- `POST /api/employees/:employeeId/attendance` — mark attendance
-- `GET /api/summary` — dashboard summary
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | API health check |
+| GET | `/api/employees` | List all employees with attendance counts |
+| POST | `/api/employees` | Add a new employee |
+| DELETE | `/api/employees/:employeeId` | Delete an employee |
+| GET | `/api/employees/:employeeId/attendance` | List attendance (optional `?date=YYYY-MM-DD`) |
+| POST | `/api/employees/:employeeId/attendance` | Mark attendance |
+| GET | `/api/summary` | Dashboard summary stats |
 
 ## Run Locally
 
@@ -41,9 +61,9 @@ npm run dev
 ```
 The API starts on `http://localhost:3001`.
 
-**Optional environment variables**:
+**Environment variables** (optional):
 - `PORT` — API port (default `3001`)
-- `DB_PATH` — SQLite file path (default `backend/data/hrms.db`)
+- `MONGODB_URI` — MongoDB connection string
 - `CORS_ORIGIN` — allowed frontend origin (default `*`)
 
 ### 2) Frontend
