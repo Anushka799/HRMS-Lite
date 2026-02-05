@@ -16,7 +16,13 @@ app = FastAPI(title="HRMS Lite API", version="1.0.0")
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://hrms-lite-bice.vercel.app",
+        "*"
+    ],
     allow_credentials=False,
     allow_methods=["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     allow_headers=["*"],
