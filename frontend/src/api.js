@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://full-stack-coding-assignment-hrms-lite-1.onrender.com';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://full-stack-coding-assignment-hrms-lite-1-0q8n.onrender.com';
 
 const buildUrl = (path) => `${API_BASE}${path}`;
 
