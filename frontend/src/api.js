@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3001';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://full-stack-coding-assignment-hrms-lite-1.onrender.com';
 
 const buildUrl = (path) => `${API_BASE}${path}`;
 
