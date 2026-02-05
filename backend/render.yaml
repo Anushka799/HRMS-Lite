@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hrms-lite-api
+    env: node
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://hrms-lite-bice.vercel.app
