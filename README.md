@@ -2,11 +2,7 @@
 
 A lightweight Human Resource Management System for managing employee records and daily attendance. Built as a full-stack assignment with a clean, production-ready UI and a simple REST API.
 
-## 🔗 Live Demo
 
-- **Frontend:** https://hrms-lite-bice.vercel.app
-- **Backend API:** https://full-stack-coding-assignment-hrms-lite-1-0q8n.onrender.com
-- **GitHub:** https://github.com/uzairkhann03/Full-Stack-Coding-Assignment-HRMS-Lite
 
 ## Project Overview
 HRMS Lite enables a single admin to:
@@ -93,12 +89,3 @@ VITE_API_BASE=https://your-backend-url
   - Output directory: `dist`
   - Set `VITE_API_BASE` to your deployed backend URL
 
-## Assumptions & Limitations
-- Single admin user (no authentication)
-- Attendance is unique per employee per date
-- SQLite is file-based; production should use persistent storage
-- Time is based on the server clock for summary “today” counts
-
----
-
-If you want, I can also add deployment-ready configs (Render/Vercel) or seed data.
